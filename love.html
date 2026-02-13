@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Любовь это…</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Marck+Script&family=Inter:wght@300;400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #000;
+  overflow-x: hidden;
+  color: white;
+}
+
+/* секция */
+.section {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* размытый фон */
+.bg-blur {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: blur(30px) brightness(0.6);
+  transform: scale(1.2);
+  z-index: 0;
+  transition: transform 8s ease;
+}
+
+.section.visible .bg-blur {
+  transform: scale(1);
+}
+
+.bg-img {
+  position: absolute;
+  height: 90%;
+  width: auto;
+  object-fit: contain;
+  z-index: 1;
+  transition: transform 6s ease;
+
+  background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(5px);
+  border-radius: 16px;
+}
+
+
+.section.visible .bg-img {
+  transform: scale(1.03);
+}
+
+/* виньетка */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(0,0,0,0.2) 40%, rgba(0,0,0,0.75) 100%);
+  z-index: 2;
+}
+
+/* контент */
+.content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  max-width: 750px;
+  padding: 20px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1.2s ease;
+}
+
+.section.visible .content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.title {
+  font-family: 'Marck Script', cursive;
+  font-size: 52px;
+  margin-bottom: 20px;
+}
+
+.text {
+  font-size: 22px;
+  line-height: 1.6;
+}
+
+/* финальный слайд */
+.final .content {
+  transform: scale(0.85);
+  transition: all 2s ease;
+}
+
+.final.visible .content {
+  transform: scale(1);
+}
+
+.signature {
+  margin-top: 40px;
+  font-family: 'Marck Script', cursive;
+  font-size: 28px;
+  opacity: 0.85;
+}
+
+/* лёгкое зерно */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  opacity: 0.07;
+  pointer-events: none;
+  z-index: 10;
+}
+</style>
+</head>
+<body>
+
+<!-- СЕКЦИЯ 1 -->
+<section class="section">
+  <div class="bg-blur" style="background-image:url('1.png')"></div>
+  <img src="1.png" class="bg-img">
+  <div class="overlay"></div>
+  <div class="content">
+    <div class="title">💛 Любовь это…</div>
+    <div class="text">
+      гулять по Луне,<br>
+      потому что в прошлом году уже подарил ей весь мир.
+    </div>
+  </div>
+</section>
+
+<!-- СЕКЦИЯ 2 -->
+<section class="section">
+  <div class="bg-blur" style="background-image:url('2.jpg')"></div>
+  <img src="2.jpg" class="bg-img">
+  <div class="overlay"></div>
+  <div class="content">
+    <div class="title">💛 Любовь это…</div>
+    <div class="text">
+      делать вид, что не устал,<br>
+      когда она рассказывает пятую историю подряд.<br>
+    </div>
+  </div>
+</section>
+
+<!-- СЕКЦИЯ 3 -->
+<section class="section">
+  <div class="bg-blur" style="background-image:url('3.png')"></div>
+  <img src="3.png" class="bg-img">
+  <div class="overlay"></div>
+  <div class="content">
+    <div class="title">💛 Любовь это…</div>
+    <div class="text">
+      гулять вместе даже в плохую погоду
+    </div>
+  </div>
+</section>
+
+<!-- СЕКЦИЯ 4 -->
+<section class="section">
+  <div class="bg-blur" style="background-image:url('4.png')"></div>
+  <img src="4.png" class="bg-img">
+  <div class="overlay"></div>
+  <div class="content">
+    <div class="title">💛 Любовь это…</div>
+    <div class="text">
+      Выключать пять её будильников на 7:00, когда тебе вставать в 9
+    </div>
+  </div>
+</section>
+
+<!-- СЕКЦИЯ 5 -->
+<section class="section">
+  <div class="bg-blur" style="background-image:url('5.png')"></div>
+  <img src="5.png" class="bg-img">
+  <div class="overlay"></div>
+  <div class="content">
+    <div class="title">💛 Любовь это…</div>
+    <div class="text">
+      планировать экономить,<br>
+      и заказать доставку в последний раз.
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="bg-blur" style="background-image:url('6.png')"></div>
+  <img src="6.png" class="bg-img">
+  <div class="overlay"></div>
+  <div class="content">
+    <div class="title">💛 Любовь это…</div>
+    <div class="text">
+      каждый день ходить ей за шоколадкой.
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- ФИНАЛ -->
+<section class="section final-section">
+  <div class="content">
+    <h1>Я люблю тебя 🤍</h1>
+    <p class="final-sub">Даже если завтра придётся идти ещё за одной шоколадкой.</p>
+  </div>
+</section>
+
+
+<script>
+const sections = document.querySelectorAll('.section');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.4 });
+
+sections.forEach(section => observer.observe(section));
+
+/* лёгкий параллакс */
+window.addEventListener('scroll', () => {
+  document.querySelectorAll('.bg-img').forEach(img => {
+    const rect = img.parentElement.getBoundingClientRect();
+    const offset = rect.top * 0.05;
+    img.style.transform = `translateY(${offset}px)`;
+  });
+});
+</script>
+
+</body>
+</html>
